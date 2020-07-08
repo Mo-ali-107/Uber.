@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <head>
+      <title>Uber</title>
+        <style> 
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: rgb(0, 0, 0);
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a, .dropbtn {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 25px 20px;
+          text-decoration: none;
+          font-size: larger;
+        }
+        
+        li a:hover  {
+          background-color: #111;
+        }
+        .dropdown:hover .dropbtn {
+  background-color: rgb(110, 110, 110);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+* {
+  box-sizing: border-box;
+}
+{box-sizing: border-box}
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1500px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+.column2 {
+  float: left;
+  width: 20%;
+  padding: 50px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.topic { font-size: 40px; color: rgb(0, 0, 0);text-decoration: none; }
+.topic2 {color: white; text-decoration: none;}
+.topic3 { color: white;text-decoration: none; font-size: 25px; padding: 10px;}
+.topic4 { color: black;text-decoration: none;
+font-size: 15px; text-align: left;}
+footer {
+  padding: 3px;
+  background-color: black;
+  color: white;
+  width: 120%;
+}
+.fa {
+  padding: 2px;
+  font-size: 15px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 7px 4px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    size: 25px;
+
+}
+
+.fa-facebook {
+  background: white;
+  color: black;
+}
+
+.fa-twitter {
+  background: black;
+  color: white;
+}
+
+.fa-youtube {
+  background: black;
+  color: white;
+}
+
+.fa-linkedin {
+  background: white;
+  color: black;
+}
+
+.fa-instagram {
+  background: black;
+  color: white;
+}
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style type='text/css'>
+/*<![CDATA[*/
+@font-face{font-family:"fontfutura";src:url("https://fonts.googleapis.com/css?family=Open+Sans") format("ttf");font-weight:normal;font-style:normal;}
+a.btn-google{color:#fff}
+.btn{padding:10px 16px;margin:5px;font-size:18px;line-height:1.3333333;border-radius:6px;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;font-weight:500;text-decoration:none;display:inline-block}
+.btn:active:focus,.btn:focus{outline:0}
+.btn:focus,.btn:hover{color:#333;text-decoration:none;outline:0}
+.btn:active{outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}
+.btn-google{color:#fff;background-color:#111;border-color:#000;padding:15px 16px 5px 40px;position:relative;font-family:fontfutura;font-weight:600}
+.btn-google:focus{color:#fff;background-color:#555;border-color:#000}
+.btn-google:active,.btn-google:hover{color:#fff;background-color:#555;border-color:#000;}
+.btn-google:before{content:"";background-image:url(https://4.bp.blogspot.com/-52U3eP2JDM4/WSkIT1vbUxI/AAAAAAAArQA/iF1BeARv2To-2FGQU7V6UbNPivuv_lccACLcB/s30/nexus2cee_ic_launcher_play_store_new-1.png);background-size:cover;background-repeat:no-repeat;width:30px;height:30px;position:absolute;left:6px;top:50%;margin-top:-15px}
+.btn-google:after{content:"GET IT ON";position:absolute;top:5px;left:40px;font-size:10px;font-weight:400;}
+/*]]>*/
+</style>
+</b:if>
+
+        </style>
+        </head>
+        <body>
+        
+        <ul>
+          <li><a class="active" href="#Uber"style="font-size:25px">Uber</style></a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Company</a>
+            <div class="dropdown-content">
+              <a href="https://www.uber.com/eg/en/about/">About Us</a>
+              <a href="https://www.uber.com/eg/en/about/how-does-uber-work/">How uber works</a>
+              <a href="https://www.uber.com/eg/en/community/">Global citizenship</a>
+              <a href="https://www.uber.com/newsroom/">News room</a>
+              <a href="https://investor.uber.com/home/default.aspx">Investor relations</a>
+              <a href="https://www.uber.com/en-EG/blog/">Blog</a>
+              <a href="https://www.uber.com/eg/en/careers/">Careers</a>
+              
+            </div>
+          </li>
+          <li><a href="https://www.uber.com/eg/en/safety/">Safety</a></li>
+          <li><a href="https://help.uber.com/?uclick_id=c177c8ab-7c8a-4b0c-9d0a-0fb0ec1a7390">Help</a></li>
+          <li><a href="https://www.uber.com/eg/en/coronavirus/">Covid-19 resources</a></li>
+
+
+          <li class="rightli" style="float:right">
+            <a href="javascript:void(0)">Sign up</a></li>
+          <li class="rightli" style="float:right">
+            <a href="javascript:void(0)"><i class="material-icons" style="font-size:20px">person</i>
+              Log in</a></li>
+            <li class="rightli" style="float:right"></li>
+            <li class="rightli" class="dropdown" style="float:right">
+                <a href="javascript:void(0)" class="dropbtn"><i class="material-icons" style="font-size:20px">dialpad</i>
+                  Products</a>
+            </li>
+          <li class="rightli" style="float:right">
+            <a href="javascript:void(0)"><i class="material-icons" style="font-size:20px">language</i>
+              EN</a></li>
+        </ul>
+        </body>
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1578357180/assets/69/908bc0-7167-40d0-b046-af52170801f5/original/Product-Masthead-Desktop_2.jpg" style="width:100%">
+          
+          </div>
+          
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1558484011/assets/fb/fc9790-bb1c-427c-8504-684ae1def5e8/original/ride_2x.jpg" style="width:100%">
+          
+          </div>
+          
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1583172024/assets/e3/dcbe7e-dcb0-42cb-b3b2-35d31e5f8669/original/eats-hero-desktop-6.jpg" style="width:100%">
+          
+          </div>
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1558484117/assets/8a/fa8125-145d-4b00-b916-0ee7041f826e/original/Freight_2x.jpg" style="width:100%">
+          
+          </div>
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1558484175/assets/4d/9ea561-e479-440f-b79a-c56b0dc2e3d2/original/Business_2x.jpg" style="width:100%">
+          
+          </div>
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1570130593/assets/5c/28bb83-9828-4abd-ad8a-319e67ff95bc/original/uber-com-uberworks-hero-tab-image.png" style="width:100%">
+          
+          </div>
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1558484252/assets/70/5af028-9661-4f3f-97cf-e80e32d2d225/original/bikes_2x.jpg" style="width:100%">
+          
+          </div>
+          <div class="mySlides fade">
+            <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_1349,h_760/v1558484293/assets/4e/f3c1d1-0eb6-4d01-9d18-38ab2e43b997/original/Fly_2x.jpg" style="width:100%">
+          
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+          </div>
+          <br>
+          
+          
+          
+          <script>
+          var slideIndex = 1;
+          showSlides(slideIndex);
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+          }
+          </script>
+          <div class="container">
+            <img src="https://lh3.googleusercontent.com/VAd5q1z8paiqZUzhWxtEBA45vUq89oEvKSBF6zMmfA_IRXM0JyXcET_kNSAOeEiMg7ilcKVJLIM00bkrZrfe5JDt5LCf3Z5zCf-tU73sYeKrtQF9ILeeIW_hPAhmYzpvSMIsUDUrhjQUKTrIG_k2pyf2VRruzpZZJpMestwDGrxlecyiPdTc_A-1-3werh9ydPWx667V7atTLy_C3_wGCaxUK3e8VRjGpfijdVaEqhOfWkgMD4vs1ozk8Iq_0P0T9o48iCPWAJM1l5KC61bSIgL0hB_XJK5C51Ox-ZXkVTj-TWSrJE1SdTsH-WzcvsbE3jU8J7dQj5Gzgk_O78IeurqmwzbGIYeufStS0dXhvDX09KFiSpNvVgMRYZgT_D8jyiFCs498YDpgHDD-cm-Wy28oHiuiR02yqNW0r_OOUXeAEDx7vS0tPrn-YNlg9_OUFnRB5eJXKeTRTI-V_7tHy8XAhtZzCbkmfGZGiJgfDGcfOZK2TYuGitAJw1WrkFZS5hImXvNdjwH4Bvdk7bZgFHfze3T3IlWnSL2lHAl63YMPJI_Ukh9nICD-EyIXLwyz8cVsXLeQhB58d5-I0uuP8tHMH24awXpBRqLYe6JunTpF8qgjDfxk4miaQ3iWizgQ3pJUoNL4P1h6Y6Xrzn6E7beEeulV6fM3ysCWRZjzRywkmzDwaoBJ4N4ZU0SuCg=w1365-h538-no?authuser=0">
+
+            <div class="top-left">Setting 900+ cities in motion
+              <br>
+              <a href="https://www.uber.com/global/en/cities/" target="_self" class="topic4">View all cities</a></div>
+
+          </div>
+          <h1> Uber for Business</h1>
+          <p> The power of Uber in everyday business</p>
+
+          <div class="row">
+            <div class="column">
+              <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_360,h_240/v1585954525/assets/14/fcb55f-8d2c-4037-be40-96265930413e/original/business-eater-horz2x.png"  style="width:80%">
+              <h2>Work meals</h2>
+              <p>Delight your employees with their favorite meals delivered directly to anywhere they work.</p>
+              <a href="https://www.uber.com/eg/en/business/eats/" target="_self">Learn more</a>
+            </div>
+            <div class="column">
+              <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_360,h_240/v1585954625/assets/6a/4717e8-ac27-493e-a940-990e87d31f02/original/employee-travel-horz2x.png" style="width:80%">
+              <h3>Employee rides</h3>
+              <p>Take the work out of work-related trips. Create ground travel and commute programs for employees.</p>
+              <a href="https://www.uber.com/eg/en/business/business-travel/" target="_self">Learn more</a>
+            </div>
+            <div class="column">
+              <img src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,w_360,h_240/v1585954718/assets/e1/70f6a1-f828-414c-b3f1-fa39a6915711/original/ride-coordinator-horz2x.png" style="width:80%">
+              <h4>Courtesy rides</h4>
+              <p>Aim to impress. Arrange door-to-door rides for your customers, clients, and guests.</p>
+              <a href="https://www.uber.com/eg/en/business/courtesy-rides/" target="_self">Learn more</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <h2>Our commitment to your safety</h2>
+              <p>With every safety feature we add and every standard in our Community Guidelines we uphold, we're committed to working to create a safe environment for our users.</p>
+              <a href="https://www.uber.com/eg/en/safety/uber-community-guidelines/" target="_self">Learn more about our Community Guidelines</a><br>
+          <a href="https://www.uber.com/eg/en/safety/" target="_self">See all safety features</a>
+          
+            </div>
+            <br><br>
+            <div class="column">
+  
+            </div>
+            <div class="column">
+              <img src="https://lh3.googleusercontent.com/niE7N3e6rytxtM0UPhRZNeOK-jfJ2UkFSmRx-8aqIx_v88l-b582kaJoW1Ic4ENL8LIkyHt5IvnKOh5kLNv9nTmh-_DL2f5Y-7H6Pw64m-61geM02-wHHOdT6dX08DH-aWiXiub8fKztkf9CgXNCVZvg9PzubR_Yh4NjHG7OYxPWYCbmkHxOh8pBOAvmfJ07qyIK9gFsR2Q0TJOLwlfr93oKNmQgPCYwLajy5ugqR_enQRQZH87L_aSI60SWBeoFCyImvCfvd9RvyXYcxQ6yn2-WK5KaPOZRqQJDy3UgLidooAPg26HGu926yI3IJXbtFxiEdI19MafLPSxm4zNNcVxQD724ZjA3T5fKwuApkLVJOtm_ZMjLRbK7sVLT6ks_W0t-g6kaZb_jpGqtxl6wtXoNJsPWCCH-R96d6AvWsOi3v3ISeBsfF2x_DqrRtUeHS76kxM0hWgRseLQspinpsLKdCsZy8kFF_1mg4-zOBq1VAAXQZRUqT23m-jzOwojUUMTBBpmw2XvvdynKXyUOsFeIo4EAl5hXi6DAo8aGNCSlbGWGOmEAsAR2RoS4MW26hJdyZCJlpIun5McgfiocFE0CcPET8SlS4_1lyiHhBT_XrEAJGp98-SZyhaMpqH4C4d9qwDYVYAijz-xlNUl3ZxmE4vbhkpbk-jAzQZ92jEbHowFZugWW4-Vu9nV5ag=w558-h297-no?authuser=0" style="width:300px">
+            </div>
+            <br><br><br><br><br>
+
+            <div class="row">
+              <div class="column">
+                <i class="material-icons" style="font-size:36px">people_outline</i>
+                <p style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;">About Us</p>
+                <p<p style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;">Find out how we started, what drives us, and how we’re igniting opportunity.
+
+                </p>
+                <br>
+                <a href="https://www.uber.com/eg/en/about/" target="_self">learnmore</a>
+                </div>
+            
+                <div class="column">
+                  <i class="material-icons" style="font-size:36px">speaker_notes</i>
+                  <p style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;">Newsroom</p>
+                  <p<p style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;">See announcements about our latest releases, initiatives, and partnerships.
+  
+                  </p>
+                  <br>
+                  <a href="https://www.uber.com/newsroom/" target="_self">learnmore</a>
+                  </div>
+
+                  <div class="column">
+                    <i class="material-icons" style="font-size:36px">home</i>
+                    <p style="font-size: 30px;font-family: Arial, Helvetica, sans-serif;">Global citizenship</p>
+                    <p style="font-size: 15px;font-family: Arial, Helvetica, sans-serif;"> about our commitment to making a positive impact in the cities we serve.
+    
+                    </p>
+                    <br>
+                    <a href="https://www.uber.com/eg/en/community/" target="_self">learnmore</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <a href="https://www.uber.com/a/join-new?ec_exp=1&exp=70801t" target="_self" class="topic">Sign up to drive</a>
+              <p>________________________________________________________</p>
+              </div>
+              <div class="column">
+  
+              </div>
+              <div class="column">   
+                    <a href="https://auth.uber.com/login/?uber_client_name=riderSignUp&uclick_id=b8ca6c21-e9c9-4b0e-a459-f93ff2a370f8" target="_self" class="topic">Sign up to ride</a>
+                    <p>_____________________________________________________</p>
+              </div>
+    
+          </div>
+          
+  </div>
+  <footer>
+    <br><br>
+    <div class="row">
+      <div class="column">
+  
+      </div>
+      <div class="column">
+  
+      </div>
+      <div class="column">
+        <a href="https://www.uber.com/eg/en/terms/careem-acquisition-egypt/" target="_self" class="topic2">Uber's acquisition of careem</a>
+      </div>
+      
+    </div>
+    <div class="row">
+      <div class="column"> 
+        <br><br>
+        <a href="https://www.uber.com/eg/en/" target="_self" class="topic3">Uber</a>
+        <br><br><br>
+        <a href="https://help.uber.com/?uclick_id=b8ca6c21-e9c9-4b0e-a459-f93ff2a370f8" target="_self" class="topic3">Visit Help Center</a></div>
+    </div>
+    <div class="row">
+      <div class="column2">
+        <p style="font-size: 25px; color: white;">Company</p>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/about/" target="_self" class="topic2">About Us</a>
+        <br><br>
+        <a href="https://www.uber.com/newsroom/" target="_self" class="topic2">News Room</a>
+        <br><br>
+        <a href="https://investor.uber.com/home/default.aspx" target="_self" class="topic2">Investors</a>
+        <br><br>
+        <a href="https://www.uber.com/en-EG/blog/" target="_self" class="topic2">Blog</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/careers/" target="_self" class="topic2">Careers</a>
+      </div>
+      <div class="column2">
+        <p style="font-size: 25px; color: white;">Product</p>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/ride/" target="_self" class="topic2">Ride</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/drive/" target="_self" class="topic2">Drive</a>
+        <br><br>
+        <a href="https://www.ubereats.com/eg?uclick_id=b8ca6c21-e9c9-4b0e-a459-f93ff2a370f8" target="_self" class="topic2">Eat</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/business/" target="_self" class="topic2">Uber for business</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/freight/" target="_self" class="topic2">Uber freight</a>
+      </div>
+      <div class="column2">
+        <p style="font-size: 25px; color: white;">Global citizenship</p>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/safety/" target="_self" class="topic2">Safety</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/community/diversity-and-inclusion/" target="_self" class="topic2">Diversity</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/about/reports/law-enforcement/" target="_self" class="topic2">transperncy</a>
+      </div>
+      <div class="column2">
+        <p style="font-size: 25px; color: white;">Innovation</p>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/atg/" target="_self" class="topic2">ATG</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/uberai/" target="_self" class="topic2">AI</a>
+        <br><br>
+        <a href="https://www.uber.com/eg/en/elevate/" target="_self" class="topic2">Elevate</a>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="column2">
+        <a href="https://www.facebook.com/uber?uclick_id=b8ca6c21-e9c9-4b0e-a459-f93ff2a370f8" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/uber?uclick_id=b8ca6c21-e9c9-4b0e-a459-f93ff2a370f8" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com/channel/UCgnxoUwDmmyzeigmmcf0hZA?uclick_id=b8ca6c21-e9c9-4b0e-a459-f93ff2a370f8" class="fa fa-youtube"></a>
+        <a href="https://www.linkedin.com/checkpoint/challengesV2/AQELdIvYloBSTgAAAXLdi8NNFc2P41Vr0OHxVoU6TMJxd62WEmAMqfiCLrn5Pi5bsb0LguUDOdf7_ws0QrVkfkS1WzWqTtzehw" class="fa fa-linkedin"></a>
+        <a href="https://www.instagram.com/uber/?uclick_id=b8ca6c21-e9c9-4b0e-a459-f93ff2a370f8" class="fa fa-instagram"></a>
+
+      </div>
+      <div class="column2">
+        <a href=""><i style="font-size:20px;color: white;" class="fa">&#xf041;cairo</i>
+      </div>
+      <div class="column2"></div>
+      <div class="column2">
+        <a class="btn btn-google" href="#" title="Google Play">Google Play</a>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="column2">
+        © 2020 Uber Technologies Inc.
+      </div>
+      <div class="column2"></div>
+      <div class="column2"></div>
+      <div class="column2">
+        <a href="https://www.uber.com/legal/en/document/?country=united-states&lang=en&name=privacy-notice" target="_self" class="topic2">Privacy</a>  &nbsp;&nbsp;&nbsp;<a href="https://www.uber.com/eg/en/about/accessibility/" target="_self" class="topic2">Accessibility</a>  &nbsp;&nbsp;&nbsp;<a href="https://www.uber.com/legal/en/document/?name=general-terms-of-use&country=united-states&lang=en" target="_self" class="topic2">Terms</a>
+      </div>
+    </div>
+   
+   
+    
+  </footer>
+          
+
+        
+</html>
